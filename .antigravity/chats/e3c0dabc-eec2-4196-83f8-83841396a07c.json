@@ -52,6 +52,30 @@
       "created_at": "2026-11-07T07:50:49.158Z",
       "sender": "ios",
       "is_cancelled": false
+    },
+    {
+      "id": "a35b8f86-4ae6-4092-b788-467883d8ff24",
+      "role": "agent",
+      "content": "Your weekly Google allowance for this model is used up.\nIt comes back in about 7 days.\nTwo ways to keep going now:\n- Pick another model in the app — each family has its own allowance, and the picker shows what's left.\n- Get more from Google: https://antigravity.google/g1-upgrade",
+      "status": "error",
+      "model": "gemini-3.8-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": "3e5bf0ff-5af8-4597-9cbd-d1689474777b",
+      "created_at": "2026-11-07T07:51:53.734Z",
+      "sender": "macOS",
+      "is_cancelled": false
+    },
+    {
+      "id": "a27319c7-4600-480e-80b4-3298dd6c0869",
+      "role": "user",
+      "content": "Build this project so I can see it in the preview: run its production build (for example npm run build) and make sure the built pages end up in dist, build or out. If it's a Next.js project, switch it to static export first (output: 'export'). Tell me when it's done.",
+      "status": "pending",
+      "model": "claude-sonnet-4-6",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-11-07T08:02:09.969Z",
+      "sender": "ios",
+      "is_cancelled": false
     }
   ]
 }

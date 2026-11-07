@@ -4,18 +4,29 @@ import { notFound } from 'next/navigation';
 import prisma from '@/lib/prisma';
 import { CheckCircle2, Printer, Truck, ArrowRight, Package } from 'lucide-react';
 
+export const dynamic = 'force-static';
+
+export function generateStaticParams() {
+  return [{ orderNumber: '_placeholder' }];
+}
+
 export default async function OrderConfirmationPage({
   params,
 }: {
   params: { orderNumber: string };
 }) {
-  const order = await prisma.order.findUnique({
-    where: { orderNumber: params.orderNumber },
-    include: {
-      items: true,
-      timeline: { orderBy: { createdAt: 'desc' } },
-    },
-  });
+  let order;
+  try {
+    order = await prisma.order.findUnique({
+      where: { orderNumber: params.orderNumber },
+      include: {
+        items: true,
+        timeline: { orderBy: { createdAt: 'desc' } },
+      },
+    });
+  } catch {
+    notFound();
+  }
 
   if (!order) {
     notFound();
