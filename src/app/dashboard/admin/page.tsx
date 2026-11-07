@@ -335,11 +335,36 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            {/* Quick ERP Links */}
-            <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-3">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#171936]">
-                Direct Module Shortcuts
-              </h3>
+            {/* Quick ERP Links & CSV Exports */}
+            <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#171936]">
+                  Data Export & Management Shortcuts
+                </h3>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <a
+                    href="/api/admin/reports/export?type=orders"
+                    download
+                    className="px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-[#4F24E8] hover:text-white text-[#171936] font-semibold transition-colors"
+                  >
+                    Export Orders (CSV)
+                  </a>
+                  <a
+                    href="/api/admin/reports/export?type=finance"
+                    download
+                    className="px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-[#4F24E8] hover:text-white text-[#171936] font-semibold transition-colors"
+                  >
+                    Export General Ledger (CSV)
+                  </a>
+                  <a
+                    href="/api/admin/reports/export?type=inventory"
+                    download
+                    className="px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-[#4F24E8] hover:text-white text-[#171936] font-semibold transition-colors"
+                  >
+                    Export Stock Audit (CSV)
+                  </a>
+                </div>
+              </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-bold">
                 <Link href="/dashboard/staff" className="p-3 rounded-xl bg-purple-50 text-[#4F24E8] hover:bg-purple-100 transition-colors text-center">
                   Company Costing ERP →
